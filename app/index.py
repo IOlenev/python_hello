@@ -1,11 +1,15 @@
 from flask import Flask
+import requests
+import console
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
-    return 'Hello world!!'
+def start():
+    return str(console.mul10(10))
+    #response = requests.get("https://api.github.com")
+    #return 'Hello world!' + str(response.status_code)
 
 
 if __name__ == "__main__":
